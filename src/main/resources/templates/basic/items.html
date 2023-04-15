@@ -27,6 +27,7 @@
                 <th>상품명</th>
                 <th>가격</th>
                 <th>수량</th>
+                <th>삭제</th>
             </tr>
             </thead>
             <tbody>
@@ -36,6 +37,13 @@
                        th:text="${item.itemName}">상품명</a></td>
                 <td th:text="${item.price}">10000</td>
                 <td th:text="${item.quantity}">10</td>
+                <form action="item.html" th:action="@{|/basic/items/${item.id}/delete|}" method="post">
+                    <td>
+                        <button class="btn btn-danger btn-sm"
+                                onclick="location.href='addForm.html'" type="submit">삭제
+                        </button>
+                    </td>
+                </form>
             </tr>
             </tbody>
         </table>

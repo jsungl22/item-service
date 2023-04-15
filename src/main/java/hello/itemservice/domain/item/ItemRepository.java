@@ -1,5 +1,6 @@
 package hello.itemservice.domain.item;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @Repository
 public class ItemRepository {
 
@@ -36,6 +38,14 @@ public class ItemRepository {
         findItem.setItemName(updateParam.getItemName());
         findItem.setPrice(updateParam.getPrice());
         findItem.setQuantity(updateParam.getQuantity());
+    }
+
+    // 상품 삭제
+    public void delete(Long itemId) {
+        Item findItem = findById(itemId);
+        if(findItem != null) {
+            store.remove(itemId);
+        }
     }
 
     // 테스트용 초기화
