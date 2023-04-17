@@ -49,7 +49,8 @@ public class BasicItemController {
 
     // 상품 등록 폼
     @GetMapping("/add")
-    public String addForm() {
+    public String addForm(Model model) {
+        model.addAttribute("item", new Item());
         return "basic/addForm";
     }
 
