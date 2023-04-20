@@ -1,8 +1,8 @@
 package hello.itemservice.domain.item;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.util.List;
 
 @Getter
